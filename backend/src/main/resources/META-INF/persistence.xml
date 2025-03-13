@@ -5,6 +5,11 @@
              version="3.0">
   <persistence-unit name="ecommjava" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider </provider>
+    <class>model.Adress</class>
+    <class>model.Product</class>
+    <class>model.User</class>
+    <class>model.Comment</class>
+
     <properties>
       <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Ecomm"/>
