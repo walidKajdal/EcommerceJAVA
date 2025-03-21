@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-//import { products } from "../assets/frontend_assets/assets";
+import { assets } from "../assets/frontend_assets/assets";
 import { toast } from "react-toastify";
 import Cart from "../pages/Cart";
 import { useNavigate } from "react-router-dom";
@@ -11,9 +11,9 @@ const ShopContextProvider = (props) => {
 
     const currency = 'MAD';
     const delivery_fee = 20;
-    const backendURL = import.meta.env.VITE_BACKEND_URL;   
+    const backendURL = import.meta.env.VITE_BACKEND_URL;
     const [search, setSearch] = useState('');
-    const [showSearch, setShowSearch] = useState(false);  
+    const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
     const [products, setProducts]  = useState([]);
     const navigate = useNavigate();
@@ -37,11 +37,11 @@ const ShopContextProvider = (props) => {
             }
         }
         else{
-            cartData[itemId] = {};  
+            cartData[itemId] = {};
             cartData[itemId][size] = 1;
-        }   
+        }
         setCartItems(cartData);
-        
+
     }
 
     const getCartCount = ()=>{
@@ -57,17 +57,17 @@ const ShopContextProvider = (props) => {
 
                 }
 
-            } 
+            }
         }
         return totalCount;
-    }   
+    }
 
     const updateQuantity = async(itemId,size,quantity)=> {
         let cartData = structuredClone(cartItems);;
 
         cartData[itemId][size] = quantity;
 
-        setCartItems(cartData); 
+        setCartItems(cartData);
     }
 
     const getCartAmount = () => {
@@ -87,22 +87,22 @@ const ShopContextProvider = (props) => {
         return totalAmount;
     }
 
-    const getProductsData = async() => {    
-        try{
-
-            const response = await axios.get(backendURL +"/api/product/getAllProducts"); 
-            if(response.data.success){
-                setProducts(response.data.products);
-            }
-            else{
-                toast.error(response.data.error);
-            }
-
-        }catch(error){
-            console.log(error);
-            toast.error(error.message);
+    const getProductsData = async() => {
+        try {
+            const response = await axios.get(`${backendURL}/import`);
+            const transformedProducts = response.data.map(product => ({
+                ...product,
+                image: product.image?.map(imgName => {
+                    return assets[imgName] || imgName;
+                }) || []
+            }));
+            setProducts(transformedProducts);
+        } catch(error) {
+            console.error("Erreur lors de la récupération des produits :", error);
+            toast.error("Impossible de récupérer les produits.");
         }
-    }
+    };
+
 
     useEffect(()=>{
         getProductsData()
