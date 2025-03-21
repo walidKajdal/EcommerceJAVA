@@ -5,11 +5,34 @@ import { Link } from 'react-router-dom'
 const Login = () => {
 
   const [currentState, setCurrentState] = useState('Login')  ;
-  const onSubmitHandler = (e) => {  
-    e.preventDefault();
-  }
+    const onSubmitHandler = async (e) => {
+        e.preventDefault();
 
-  return (
+        const payload = {
+            action: currentState === "Login" ? "login" : "register",
+            name: currentState === "Sign Up" ? formData.name : undefined,
+            email: formData.email,
+            password: formData.password,
+        };
+
+        const response = await fetch("http://localhost:8080/backend/api/auth", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert(`✅ ${currentState} réussi !`);
+            if (data.token) localStorage.setItem("jwt", data.token); // Sauvegarde le JWT
+        } else {
+            alert(`❌ Erreur: ${data.message}`);
+        }
+    };
+
+
+    return (
     <form onSubmit={onSubmitHandler} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800'>
       <div className='inline-flex items-center gap-2 mb-2 mt-10'>
         <p className='prata-regular text-3xl'>{currentState} </p>

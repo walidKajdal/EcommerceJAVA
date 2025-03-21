@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ede2759d-b638-4370-9e3d-0a98624f2954" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img2_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img2_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img2_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img2_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img44.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img45.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img47.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img49.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img51.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img52.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/uploads/p_img9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/assets/frontend_assets/assets.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/assets/frontend_assets/assets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/context/ShopContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/context/ShopContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/pages/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/pages/Product.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/vite.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;elswordexe&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:walidKajdal/EcommerceJAVA.git&quot;,
+    &quot;accountId&quot;: &quot;ffb6e3d4-b6c4-4eb3-8e2e-bb51a697e5ae&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2u0M9bS1NoLdErwyNUnWLAdOET7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/PC/test2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ede2759d-b638-4370-9e3d-0a98624f2954" name="Changes" comment="" />
+      <created>1741380891638</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741380891638</updated>
+      <workItem from="1741380893696" duration="789000" />
+      <workItem from="1741690434264" duration="125000" />
+      <workItem from="1742039223495" duration="280000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
