@@ -6,14 +6,14 @@
          version="4.0">
 
     <!-- Nom de l'application -->
-    <display-name>eCommerce App</display-name>
+    <display-name>eCommerceJAVA</display-name>
 
     <!-- Configuration du gestionnaire de session -->
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
     <resource-env-ref>
-        <resource-env-ref-name>jdbc/ecommerce_db</resource-env-ref-name>
+        <resource-env-ref-name>jdbc/ecommerce_java</resource-env-ref-name>
         <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
     </resource-env-ref>
     <resource-ref>

@@ -1,9 +1,9 @@
 <Context>
-    <Resource name="jdbc/ecommerce_db"
+    <Resource name="jdbc/ecommerce_java"
               auth="Container"
               type="jakarta.sql.DataSource"
     driverClassName="com.mysql.cj.jdbc.Driver"
-        url="jdbc:mysql://localhost:3306/ecommerce_db"
+        url="jdbc:mysql://localhost:3306/ecommerce_java"
         username="root"
         password="root"
         maxTotal="20"
