@@ -18,7 +18,7 @@ public class Product {
     private long date;
     private boolean bestseller;
 
-    @ElementCollection(fetch = FetchType.EAGER) // Force eager fetching
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
             name = "product_images",
             joinColumns = @JoinColumn(name = "product_id")
@@ -26,12 +26,12 @@ public class Product {
     @Column(name = "image")
     private List<String> image;
 
-    @ElementCollection(fetch = FetchType.EAGER) // Force eager fetching
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(
-            name = "product_sizes", // Maps to the product_sizes table
-            joinColumns = @JoinColumn(name = "product_id") // Foreign key column
+            name = "product_sizes",
+            joinColumns = @JoinColumn(name = "product_id")
     )
-    @Column(name = "size") // Column in product_sizes storing size values
+    @Column(name = "size")
     private List<String> sizes;
 
     // Getters & Setters

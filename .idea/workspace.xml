@@ -9,17 +9,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91a3d24-39ab-4edc-8ecb-45bc518f047e" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/util/DataImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/frontend_assets/assets.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/frontend_assets/assets.js" afterDir="false" />
+    <list default="true" id="f91a3d24-39ab-4edc-8ecb-45bc518f047e" name="Changes" comment="tsawr rah static hta nsawb servlet dialhom">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/controller/DataImportServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/controller/DataImportServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/controller/ImageServletkansawbfiha.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/util/DataImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/util/DataImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/CartTotal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CartTotal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/context/ShopContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/ShopContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Product.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -45,6 +51,9 @@
     &quot;assignee&quot;: &quot;elswordexe&quot;
   }
 }</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="ffb6e3d4-b6c4-4eb3-8e2e-bb51a697e5ae" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;git@github.com:walidKajdal/EcommerceJAVA.git&quot;,
@@ -76,7 +85,7 @@
     &quot;Smart Tomcat.Tomcat: backend.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 10.1.39 (1).executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat 10.1.39.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;akram&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/PC/test2/backend/src/main/java&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/PC/test2/.smarttomcat/backend&quot;,
@@ -89,7 +98,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -350,17 +359,17 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
@@ -398,8 +407,25 @@
       <workItem from="1742039522727" duration="6122000" />
       <workItem from="1742066208030" duration="8072000" />
       <workItem from="1742218662992" duration="483000" />
-      <workItem from="1742469182551" duration="26457000" />
+      <workItem from="1742469182551" duration="29094000" />
+      <workItem from="1742671328120" duration="299000" />
+      <workItem from="1742671715592" duration="633000" />
+      <workItem from="1742672877737" duration="11906000" />
+      <workItem from="1742753322093" duration="350000" />
+      <workItem from="1742808019944" duration="1887000" />
+      <workItem from="1742897792114" duration="3308000" />
+      <workItem from="1743066380590" duration="33000" />
+      <workItem from="1743258314614" duration="13830000" />
     </task>
+    <task id="LOCAL-00001" summary="tsawr rah static hta nsawb servlet dialhom">
+      <option name="closed" value="true" />
+      <created>1742578463534</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742578463535</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +469,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="tsawr rah static hta nsawb servlet dialhom" />
+    <option name="LAST_COMMIT_MESSAGE" value="tsawr rah static hta nsawb servlet dialhom" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
