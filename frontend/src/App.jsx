@@ -12,6 +12,7 @@ import Login from './pages/Login'
 import Navbar from './components/navbar'
 import SearchBar from './components/SearchBar'
 import Footer from './components/Footer'
+import Chatbot from './components/Chatbot';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/place-order" element={<PlaceOrders />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Chatbot />
       <Footer/>
       
     </div>
