@@ -10,13 +10,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
-
-import Model.Product;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 
-@WebServlet("/import")
-public class DataImportServlet extends HttpServlet {
+@WebServlet("/Product/*")
+public class ProductServlet extends HttpServlet {
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ecommercePU");
 
     @Override
@@ -24,28 +22,42 @@ public class DataImportServlet extends HttpServlet {
         EntityManager em = emf.createEntityManager();
 
         try {
-            System.out.println("Avant la requête SQL");
+            String pathInfo = req.getPathInfo();
+            if (pathInfo == null || pathInfo.length() <= 1) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Product ID is missing in the URL.");
+                return;
+            }
+
+            long productId;
+            try {
+                productId = Long.parseLong(pathInfo.substring(1));
+            } catch (NumberFormatException e) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid product ID format.");
+                return;
+            }
 
             List<Object[]> results = em.createNativeQuery(
                     "SELECT p.id, p.name, p.description, p.price, p.category, p.subCategory, p.bestseller, " +
                             "pi.image, ps.size " +
                             "FROM product p " +
                             "LEFT JOIN product_images pi ON p.id = pi.product_id " +
-                            "LEFT JOIN product_sizes ps ON p.id = ps.product_id"
-            ).getResultList();
+                            "LEFT JOIN product_sizes ps ON p.id = ps.product_id " +
+                            "WHERE p.id = ?"
+            ).setParameter(1, productId).getResultList();
 
-            for (Object[] row : results) {
-                System.out.println("Produit: " + Arrays.toString(row));
+            if (results.isEmpty()) {
+                resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Product not found.");
+                return;
             }
 
             Map<Long, Map<String, Object>> productMap = new HashMap<>();
 
             for (Object[] row : results) {
-                Long productId = ((Number) row[0]).longValue();
+                Long id = ((Number) row[0]).longValue();
 
-                if (!productMap.containsKey(productId)) {
+                if (!productMap.containsKey(id)) {
                     Map<String, Object> product = new HashMap<>();
-                    product.put("_id", productId);
+                    product.put("_id", id);
                     product.put("name", row[1]);
                     product.put("description", row[2]);
                     product.put("price", row[3]);
@@ -55,15 +67,15 @@ public class DataImportServlet extends HttpServlet {
                     product.put("image", new HashSet<String>());
                     product.put("sizes", new HashSet<String>());
 
-                    productMap.put(productId, product);
+                    productMap.put(id, product);
                 }
 
                 if (row[7] != null) {
-                    ((Set<String>) productMap.get(productId).get("image")).add((String) row[7]);
+                    ((Set<String>) productMap.get(id).get("image")).add((String) row[7]);
                 }
 
                 if (row[8] != null) {
-                    ((Set<String>) productMap.get(productId).get("sizes")).add((String) row[8]);
+                    ((Set<String>) productMap.get(id).get("sizes")).add((String) row[8]);
                 }
             }
 
@@ -79,11 +91,14 @@ public class DataImportServlet extends HttpServlet {
             resp.setContentType("application/json");
             resp.setCharacterEncoding("UTF-8");
             resp.getWriter().write(json);
+
         } catch (Exception e) {
             e.printStackTrace();
-            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, " Erreur lors de la récupération des produits !");
+            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An error occurred while retrieving the product.");
         } finally {
-            em.close();
+            if (em != null && em.isOpen()) {
+                em.close();
+            }
         }
     }
 }

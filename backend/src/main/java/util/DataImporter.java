@@ -41,10 +41,10 @@ public class DataImporter {
                 entityManager.persist(product);
             }
 
-            System.out.println("✅ Produits importés avec succès !");
+            System.out.println("Produits importés avec succès !");
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("❌ Erreur lors de l'importation des produits !");
+            System.out.println(" Erreur lors de l'importation des produits !");
         }
     }
 }

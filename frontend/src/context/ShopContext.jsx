@@ -1,128 +1,120 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useMemo,useCallback } from "react";
 import { assets } from "../assets/frontend_assets/assets";
 import { toast } from "react-toastify";
-import Cart from "../pages/Cart";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
-
     const currency = 'MAD';
     const delivery_fee = 20;
     const backendURL = import.meta.env.VITE_BACKEND_URL;
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
-    const [products, setProducts]  = useState([]);
+    const [products, setProducts] = useState([]);
     const navigate = useNavigate();
+    const productMap = useMemo(() => {
+        return new Map(products.map(product => [product._id, product]));
+    }, [products]);
 
+    const getCartCount = () => {
+        let totalCount = 0;
+        for (const itemId in cartItems) {
+            for (const size in cartItems[itemId]) {
+                totalCount += cartItems[itemId][size];
+            }
+        }
+        return totalCount;
+    };
 
-    const addToCart = async(itemId,size)=>{
-
-        if (!size){
+    const addToCart = (itemId, size) => {
+        if (!size) {
             toast.error('Select Product Size');
             return;
         }
 
-        let cartData = structuredClone(cartItems);
-
-        if ( cartData[itemId]){
-            if (cartData[itemId][size]){
-                cartData[itemId][size] += 1;
-            }
-            else{
-                cartData[itemId][size] = 1;
-            }
+        const product = productMap.get(itemId);
+        if (!product) {
+            toast.error('Product not found');
+            return;
         }
-        else{
-            cartData[itemId] = {};
-            cartData[itemId][size] = 1;
+
+        if (!product.sizes?.includes(size)) {
+            toast.error('Invalid size selection');
+            return;
         }
-        setCartItems(cartData);
 
-    }
+        setCartItems(prev => ({
+            ...prev,
+            [itemId]: {
+                ...prev[itemId],
+                [size]: ((prev[itemId]?.[size] || 0) + 1)
+            }
+        }));
+    };
 
-    const getCartCount = ()=>{
-        let totalCount = 0;
 
-        for (const items in cartItems){
-            for (const item in cartItems[items]){
-                try{
-                    if(cartItems[items][item] > 0){
-                        totalCount += cartItems[items][item];
-                    }
-                }catch (error){
+    const updateQuantity = useCallback((itemId, size, quantity) => {
+        setCartItems(prev => {
+            const newItems = {...prev};
+            const item = newItems[itemId];
 
+            if (quantity < 1) {
+                if (item) {
+                    delete item[size];
+                    if (Object.keys(item).length === 0) delete newItems[itemId];
                 }
+            } else {
+                newItems[itemId] = {
+                    ...item,
+                    [size]: Math.min(quantity, 99)
+                };
+            }
+            return newItems;
+        });
+    }, []);
 
+    const getCartAmount = useCallback(() => {
+        let totalAmount = 0;
+        for (const [itemId, sizes] of Object.entries(cartItems)) {
+            const product = productMap.get(itemId);
+            if (!product) continue;
+
+            for (const [size, quantity] of Object.entries(sizes)) {
+                totalAmount += quantity * product.price;
             }
         }
-        return totalCount;
-    }
+        return Number(totalAmount.toFixed(2));
+    }, [cartItems, productMap]);
 
-    const updateQuantity = async(itemId,size,quantity)=> {
-        let cartData = structuredClone(cartItems);;
-
-        cartData[itemId][size] = quantity;
-
-        setCartItems(cartData);
-    }
-
-    const getCartAmount = () => {
-        let totalAmount  = 0;
-
-        for(const items in cartItems){
-            let itemInfo = products.find((product)=>product._id === items);
-            for(const item in cartItems[items]){
-                try{
-                    if(cartItems[items][item] > 0){
-                        totalAmount += cartItems[items][item] * itemInfo.price;
-                    }
-                }catch (error){
-                }
-            }
-        }
-        return totalAmount;
-    }
-
-    const getProductsData = async() => {
+    const getProductsData = async () => {
         try {
             const response = await axios.get(`${backendURL}/import`);
-            const transformedProducts = response.data.map(product => ({
+            const transformedProducts = response.data.map((product) => ({
                 ...product,
-                image: product.image?.map(imgName => {
-                    return assets[imgName] || imgName;
-                }) || []
+                image: product.image?.map((imgName) => assets[imgName] || imgName) || [],
             }));
             setProducts(transformedProducts);
-        } catch(error) {
+        } catch (error) {
             console.error("Erreur lors de la récupération des produits :", error);
             toast.error("Impossible de récupérer les produits.");
         }
     };
 
+    useEffect(() => {
+        getProductsData();
+    }, []);
 
-    useEffect(()=>{
-        getProductsData()
-    },[])
-
-
-
-    const value = {
-        products, currency, delivery_fee,
-        search, setSearch, showSearch, setShowSearch,
-        cartItems, addToCart,
-        getCartCount, updateQuantity,
-        getCartAmount, navigate, backendURL
-
-    }
     return (
-        <ShopContext.Provider value={value}>
+        <ShopContext.Provider value={{
+            products, currency, delivery_fee, search, setSearch, showSearch, setShowSearch,
+            cartItems, addToCart, updateQuantity, getCartAmount, navigate, backendURL,getCartCount
+        }}>
             {props.children}
         </ShopContext.Provider>
-    )
-}
+    );
+};
 
 export default ShopContextProvider;
