@@ -1,0 +1,7 @@
+setx CLOUDINARY_NAME "dni8mzmlt"
+setx CLOUDINARY_API_KEY "564832783952216"
+setx CLOUDINARY_SECRET_KEY "owhZv2JzJn_3b_OsBNTNGP2xx3k"
+
+setx DATABASE_URL "jdbc:mysql://localhost:3306/covera"
+setx DATABASE_USER "root"
+setx DATABASE_PASSWORD "root"
