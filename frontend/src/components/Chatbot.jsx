@@ -1,67 +1,86 @@
-import React, { useState } from "react";
-import { IoChatbubbleEllipsesOutline, IoClose } from "react-icons/io5";
+import React, { useState } from 'react';
+import ChatbotIcon from './ChatbotIcon';
+import ChatForm from './ChatForm';
+import ChatMessage from './ChatMessage';
+import { useEffect, useRef } from 'react';
+import {companyInfo} from '../companyInfo';
 
 const Chatbot = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([{ text: "Bonjour ! Comment puis-je vous aider ?", sender: "bot" }]);
-  const [input, setInput] = useState("");
+  const [chatHistory, setChatHistory] = useState([{
+     hideInChat: true,
+     role: "model",
+     text: companyInfo,
+  }]);
+  const [showChatbot, setShowChatbot] = useState(false);
+  const chatBodyRef = useRef()
 
-  const toggleChatbot = () => setIsOpen(!isOpen);
+  const generateBotResponse = async (history) => {
+    const updateHistory = (text) => {
+        setChatHistory((prev) => [...prev.filter((msg) => msg.text !== "Thinking..."), {role: "model", text}]);
+    }
+    history = history.map(({role, text}) => ({role, parts: [{text}]}));
 
-  const sendMessage = () => {
-    if (input.trim() === "") return;
-    const newMessages = [...messages, { text: input, sender: "user" }];
-    setMessages(newMessages);
-    setInput("");
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ contents: history }) 
+    }
+    console.log("API URL:", import.meta.env.VITE_API_URL);
 
-    // Simuler une réponse du bot
-    setTimeout(() => {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { text: "Désolé, je suis encore en apprentissage ! 😊", sender: "bot" },
-      ]);
-    }, 1000);
+    try{
+        const response  = await fetch(import.meta.env.VITE_API_URL, requestOptions);
+        const data = await response.json();
+        if(!response.ok) throw new Error(data.error.message || 'Something went wrong!');
+
+        const apiResponseText = data.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, '$1').trim();
+        updateHistory(apiResponseText);
+    }catch (error) {
+        console.log(error);
+    }
   };
 
+  useEffect(() => {
+    chatBodyRef.current.scrollTo({top: chatBodyRef.current.scrollHeight, behavior: "smooth"});
+
+  },[chatHistory])
+
   return (
-    <div className="fixed bottom-5 right-5 z-50">
-      {!isOpen && (
-        <button onClick={toggleChatbot} className="p-3 bg-blue-600 text-white rounded-full shadow-lg">
-          <IoChatbubbleEllipsesOutline size={28} />
+    <div className={`container ${showChatbot ? "show-chatbot" : ""}`}>
+        <button onClick={()=> setShowChatbot(prev => !prev)} id="chatbot-toggler">
+            <span className="material-symbols-outlined">mode_comment</span>
+            <span className="material-symbols-outlined">close</span>
         </button>
-      )}
-
-      {isOpen && (
-        <div className="w-72 bg-white shadow-lg rounded-lg border border-gray-300">
-          <div className="flex justify-between items-center p-3 bg-blue-600 text-white rounded-t-lg">
-            <span>Chatbot</span>
-            <button onClick={toggleChatbot}>
-              <IoClose size={20} />
-            </button>
+      <div className="chatbot-popup">
+        {/* Chatbot Header */}
+        <div className="chat-header">
+          <div className="header-info">
+            <ChatbotIcon />
+            <h2 className="logo-text">Chatbot</h2>
           </div>
-
-          <div className="h-64 overflow-y-auto p-3">
-            {messages.map((msg, index) => (
-              <div key={index} className={`my-1 p-2 rounded-lg ${msg.sender === "bot" ? "bg-gray-200" : "bg-blue-200 self-end text-right"}`}>
-                {msg.text}
-              </div>
-            ))}
-          </div>
-
-          <div className="flex p-2 border-t">
-            <input
-              type="text"
-              className="flex-1 p-2 border rounded-l-md focus:outline-none"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Écrivez un message..."
-            />
-            <button className="bg-blue-600 text-white px-4 rounded-r-md" onClick={sendMessage}>
-              Envoyer
-            </button>
-          </div>
+          <button onClick={()=> setShowChatbot(prev => !prev)} className="material-symbols-outlined">keyboard_arrow_down</button>
         </div>
-      )}
+
+        {/* Chatbot Body */}
+        <div ref={chatBodyRef} className="chat-body">
+          <div className="message bot-message">
+            <ChatbotIcon />
+            <p className="message-text">Hello! How can I assist you today?</p>
+          </div>
+          {/* Render the chat history dynamically */}
+          {chatHistory.map((chat, index) => (
+            <ChatMessage key={index} chat={chat} />
+          ))}
+        </div>
+
+        {/* Chatbot Footer */}
+        <div className="chat-footer">
+          <ChatForm 
+            chatHistory={chatHistory} 
+            setChatHistory={setChatHistory} 
+            generateBotResponse={generateBotResponse} 
+          />
+        </div>
+      </div>
     </div>
   );
 };
