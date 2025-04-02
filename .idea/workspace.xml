@@ -9,18 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91a3d24-39ab-4edc-8ecb-45bc518f047e" name="Changes" comment="tsawr rah static hta nsawb servlet dialhom">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="f91a3d24-39ab-4edc-8ecb-45bc518f047e" name="Changes" comment="fix">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a8aca414-6d7e-4538-a424-04386c510545.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a8aca414-6d7e-4538-a424-04386c510545.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/Model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/controller/DataImportServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/controller/DataImportServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/controller/ImageServletkansawbfiha.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/util/DataImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/util/DataImporter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/CartTotal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CartTotal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProductItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/context/ShopContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/ShopContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Cart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Product.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Orders.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Orders.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,13 +37,27 @@
         <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="aya-branch" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="aya-branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,6 +84,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -78,6 +98,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestCloudinary.executor&quot;: &quot;Run&quot;,
     &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
     &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -98,7 +119,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -155,6 +176,19 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCloudinary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.TestCloudinary" />
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -352,6 +386,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.TestCloudinary" />
       <item itemvalue="Application.Main" />
       <item itemvalue="HTTP Request.generated-requests | #1" />
       <item itemvalue="JavaScript Debug.index.html" />
@@ -359,6 +394,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestCloudinary" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="HTTP Request.generated-requests | #1" />
         <item itemvalue="Application.Main" />
@@ -415,7 +451,11 @@
       <workItem from="1742808019944" duration="1887000" />
       <workItem from="1742897792114" duration="3308000" />
       <workItem from="1743066380590" duration="33000" />
-      <workItem from="1743258314614" duration="13830000" />
+      <workItem from="1743258314614" duration="21891000" />
+      <workItem from="1743336461478" duration="7066000" />
+      <workItem from="1743383367501" duration="1086000" />
+      <workItem from="1743514364473" duration="11053000" />
+      <workItem from="1743595607022" duration="3192000" />
     </task>
     <task id="LOCAL-00001" summary="tsawr rah static hta nsawb servlet dialhom">
       <option name="closed" value="true" />
@@ -425,7 +465,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742578463535</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix">
+      <option name="closed" value="true" />
+      <created>1743276901968</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743276901968</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,17 +498,6 @@
                   <entry key="Show.Git.Branches" value="false" />
                 </map>
               </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
             </State>
           </value>
         </entry>
@@ -470,7 +507,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="tsawr rah static hta nsawb servlet dialhom" />
-    <option name="LAST_COMMIT_MESSAGE" value="tsawr rah static hta nsawb servlet dialhom" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -479,11 +517,6 @@
           <properties class="org.hibernate.tool.schema.spi.CommandAcceptanceException" package="org.hibernate.tool.schema.spi" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/controller/DataImportServlet.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

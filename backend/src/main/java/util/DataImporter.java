@@ -23,7 +23,7 @@ public class DataImporter {
 
         try (InputStream is = getClass().getClassLoader().getResourceAsStream("products.json")) {
             if (is == null) {
-                System.out.println("❌ Fichier JSON introuvable !");
+                System.out.println("Fichier JSON introuvable !");
                 return;
             }
 
@@ -32,7 +32,7 @@ public class DataImporter {
             Product[] productsArray = jsonb.fromJson(jsonContent, Product[].class);
 
             if (productsArray == null || productsArray.length == 0) {
-                System.out.println("❌ Le fichier JSON est vide ou mal formaté !");
+                System.out.println(" Le fichier JSON est vide ou mal formaté !");
                 return;
             }
 
