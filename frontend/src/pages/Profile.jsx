@@ -10,7 +10,7 @@ const Profile = () => {
         const token = localStorage.getItem("jwt");
 
         if (!token) {
-            toast.error("❌ You must be logged in!");
+            toast.error(" You must be logged in!");
             navigate("/login");
             return;
         }
@@ -24,19 +24,19 @@ const Profile = () => {
                 if (data.success) {
                     setUser({ name: data.name, email: data.email });
                 } else {
-                    toast.error("❌ Session expired. Please login again.");
+                    toast.error("Session expired. Please login again.");
                     localStorage.removeItem("jwt");
                     navigate("/login");
                 }
             })
             .catch(() => {
-                toast.error("❌ Network error");
+                toast.error("Network error");
             });
     }, [navigate]);
 
     const handleLogout = () => {
         localStorage.removeItem("jwt");
-        toast.success("✅ Logged out successfully!");
+        toast.success(" Logged out successfully!");
         navigate("/login");
     };
 

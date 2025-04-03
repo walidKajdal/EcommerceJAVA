@@ -5,6 +5,11 @@
               version="3.1">
   <persistence-unit name="ecommercePU" transaction-type="RESOURCE_LOCAL">
     <class>Model.Product</class>
+    <class>Model.User</class>
+    <class>Model.Delivery</class>
+    <class>Model.Order</class>
+    <class>Model.DeliveryStatus</class>
+    <class>Model.Message</class>
     <properties>
       <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ecommerce_db" />
       <property name="jakarta.persistence.jdbc.user" value="root" />
