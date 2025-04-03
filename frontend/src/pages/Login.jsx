@@ -56,7 +56,7 @@ const Login = () => {
                     }, 100);
                 }
             } else {
-                toast.error(`❌ ${data.message}`);
+                toast.error(` ${data.message}`);
             }
         } catch (error) {
             console.error("Login/Register error:", error);

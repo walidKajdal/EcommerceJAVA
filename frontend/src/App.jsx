@@ -14,6 +14,8 @@ import SearchBar from './components/SearchBar'
 import Footer from './components/Footer'
 import Chatbot from './components/Chatbot';
 import Profile from "./pages/Profile";
+import TrackingPage from "./pages/TrackingPage";
+import DeliveryTrackingPage from "./pages/DeliveryTrackingPage";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -24,6 +26,8 @@ const App = () => {
             <Navbar />
             <SearchBar />
             <Routes>
+                <Route path="/dev/:orderId" element={<DeliveryTrackingPage />} />
+                <Route path="/tracking/:orderId" element={<TrackingPage />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />

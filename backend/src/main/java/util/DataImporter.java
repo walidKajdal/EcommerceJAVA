@@ -19,7 +19,7 @@ public class DataImporter {
     }
 
     public void importProducts() {
-        System.out.println("📦 Importation des produits depuis JSON...");
+        System.out.println(" Importation des produits depuis JSON...");
 
         try (InputStream is = getClass().getClassLoader().getResourceAsStream("products.json")) {
             if (is == null) {

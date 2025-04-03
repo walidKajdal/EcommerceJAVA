@@ -8,10 +8,13 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.Keys;
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.security.Key;
 import Model.User;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -19,74 +22,88 @@ import org.mindrot.jbcrypt.BCrypt;
 public class UserServlet extends HttpServlet implements Serializable {
     private static final long serialVersionUID = 1L;
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("ecommercePU");
+    private static final String SECRET_KEY = "your-secret-key-change-this-1234567890123456"; // 32 chars
 
-
-// TODO: Implement `decodeJWT` method to extract email from JWT
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    response.setContentType("application/json");
-    PrintWriter out = response.getWriter();
-    ObjectMapper objectMapper = new ObjectMapper();
-    Map<String, Object> jsonResponse = new HashMap<>();
-
-    // Extract the Authorization header
-    String authHeader = request.getHeader("Authorization");
-    if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        jsonResponse.put("success", false);
-        jsonResponse.put("message", "Missing or invalid Authorization header");
-        out.print(objectMapper.writeValueAsString(jsonResponse));
-        out.flush();
-        return;
-    }
-
-    // Extract the token from the header
-    String token = authHeader.substring(7); // Remove "Bearer " prefix
-    String email = decodeJWT(token);
-
-    if (email == null || email.isEmpty()) {
-        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        jsonResponse.put("success", false);
-        jsonResponse.put("message", "Invalid token");
-        out.print(objectMapper.writeValueAsString(jsonResponse));
-        out.flush();
-        return;
-    }
-
-    EntityManager em = emf.createEntityManager();
-    try {
-        // Query the user by email
-        User user = em.createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
-                .setParameter("email", email)
-                .getSingleResult();
-
-        // Prepare user details excluding password
-        Map<String, String> userDetails = new HashMap<>();
-        userDetails.put("name", user.getUsername());
-        userDetails.put("email", user.getEmail());
-
-        jsonResponse.put("success", true);
-        jsonResponse.put("user", userDetails);
-        out.print(objectMapper.writeValueAsString(jsonResponse));
-        out.flush();
-    } catch (NoResultException e) {
-        response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-        jsonResponse.put("success", false);
-        jsonResponse.put("message", "User not found");
-        out.print(objectMapper.writeValueAsString(jsonResponse));
-        out.flush();
-    } catch (Exception e) {
-        response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        jsonResponse.put("success", false);
-        jsonResponse.put("message", "Error retrieving user details");
-        out.print(objectMapper.writeValueAsString(jsonResponse));
-        out.flush();
-    } finally {
-        em.close();
-    }
-}
+    //  Decode JWT Token and Extract Email
     private String decodeJWT(String token) {
-        return "mock-jwt-token".equals(token) ? "test@example.com" : null;
+        try {
+            Claims claims = Jwts.parser()
+                    .setSigningKey(SECRET_KEY.getBytes())
+                    .build()
+                    .parseClaimsJws(token)
+                    .getBody();
+            return claims.getSubject(); // Extracts email
+        } catch (JwtException e) {
+            return null;
+        }
     }
+
+    //  Generate JWT Token
+    private String generateJWT(String email) {
+        Key key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+        return Jwts.builder()
+                .setSubject(email)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 86400000)) // 1 day expiration
+                .signWith(key, SignatureAlgorithm.HS256)
+                .compact();
+    }
+
+    //  GET: Retrieve User Info
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, Object> jsonResponse = new HashMap<>();
+
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            jsonResponse.put("success", false);
+            jsonResponse.put("message", "Missing or invalid Authorization header");
+            out.print(objectMapper.writeValueAsString(jsonResponse));
+            out.flush();
+            return;
+        }
+
+        String token = authHeader.substring(7); // Remove "Bearer " prefix
+        String email = decodeJWT(token);
+
+        if (email == null || email.isEmpty()) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            jsonResponse.put("success", false);
+            jsonResponse.put("message", "Invalid token");
+            out.print(objectMapper.writeValueAsString(jsonResponse));
+            out.flush();
+            return;
+        }
+
+        EntityManager em = emf.createEntityManager();
+        try {
+            User user = em.createQuery("SELECT u FROM User u WHERE u.email = :email", User.class)
+                    .setParameter("email", email)
+                    .getSingleResult();
+
+            Map<String, String> userDetails = new HashMap<>();
+            userDetails.put("name", user.getUsername());
+            userDetails.put("email", user.getEmail());
+
+            jsonResponse.put("success", true);
+            jsonResponse.put("user", userDetails);
+            out.print(objectMapper.writeValueAsString(jsonResponse));
+            out.flush();
+        } catch (NoResultException e) {
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            jsonResponse.put("success", false);
+            jsonResponse.put("message", "User not found");
+            out.print(objectMapper.writeValueAsString(jsonResponse));
+            out.flush();
+        } finally {
+            em.close();
+        }
+    }
+
+    //  POST: Register/Login
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json");
         ObjectMapper objectMapper = new ObjectMapper();
@@ -126,25 +143,41 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
         out.flush();
     }
 
+    //  Register User with Hashed Password
     private boolean registerUser(String name, String email, String password) {
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
+
+            // Check if user already exists
+            long count = em.createQuery("SELECT COUNT(u) FROM User u WHERE u.email = :email", Long.class)
+                    .setParameter("email", email)
+                    .getSingleResult();
+            if (count > 0) {
+                return false; // User already exists
+            }
+
+            // Hash the password before saving
+            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+
             User user = new User();
             user.setUsername(name);
             user.setEmail(email);
-            user.setPassword(password);
+            user.setPassword(hashedPassword);
             em.persist(user);
+
             em.getTransaction().commit();
             return true;
         } catch (Exception e) {
             e.printStackTrace();
+            em.getTransaction().rollback();
             return false;
         } finally {
             em.close();
         }
     }
 
+    //  Authenticate User with Hashed Password Check
     private boolean authenticateUser(String email, String password) {
         EntityManager em = emf.createEntityManager();
         try {
@@ -152,15 +185,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
                     .setParameter("email", email)
                     .getSingleResult();
             return user != null && BCrypt.checkpw(password, user.getPassword());
-        } catch (Exception e) {
+        } catch (NoResultException e) {
             return false;
         } finally {
             em.close();
         }
     }
-
-    private String generateJWT(String email) {
-        return "mock-jwt-token";
-    }
-
 }
