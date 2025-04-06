@@ -130,12 +130,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 
 
-## Contact
-For questions or feedback, feel free to reach out:
-- **Author**: KIHALAya
-- **Email**: kihalaya00@gmail.com
-- **LinkedIn**:[Aya KIHAL](https://www.linkedin.com/in/aya-kihal/)
-
 Thank you for checking out **COVERA**  App! We hope you find it useful and enjoy using it. Happy coding! 🚀
 
 
