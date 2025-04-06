@@ -57,7 +57,7 @@ The **E-Commerce App** is a web-based platform that allows users to browse produ
 ### Tools
 - **Git**: Version control system.
 - **Postman**: API testing tool.
-- **Intellij idea Ultimate**: Code editor.
+- **Intellij idea Ultimate**: IDE.
 
 ---
 
