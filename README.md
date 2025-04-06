@@ -53,7 +53,7 @@ The **E-Commerce App** is a web-based platform that allows users to browse produ
 - **MySQL**: SQL database for storing application data.
 - **JWT**: JSON Web Tokens for user authentication.
 - **Jpa**: Persistence API for object-relational mapping (ORM).
--**Hibernate**: JPA implementation used to manage entities and the database.
+- **Hibernate**: JPA implementation used to manage entities and the database.
 ### Tools
 - **Git**: Version control system.
 - **Postman**: API testing tool.
