@@ -4,9 +4,8 @@ import Title from './Title'
 import ProductItem from './ProductItem';
 
 const BestSeller = () => {
-
     const {products} = useContext(ShopContext);
-    const [bestSeller, setBestSeller] = useState([]);   
+    const [bestSeller, setBestSeller] = useState([]);
 
     useEffect(() => {
         const bestProduct = products.filter((item)=>(item.bestseller));
@@ -18,9 +17,8 @@ const BestSeller = () => {
         <div className='text-center text-3xl py-8'>
             <Title text1={'BEST'} text2={'SELLERS'}/>
             <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam nemo, esse vero odit alias commodi magni consequatur ex eaque quaerat placeat enim ad modi. Nisi at aut soluta saepe doloribus.
-            </p>  
-
+                Explore our most-loved items that our customers can’t get enough of. From everyday essentials to standout statement pieces, these favorites are proven must-haves for your wardrobe.
+            </p>
         </div>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
             {
@@ -29,9 +27,7 @@ const BestSeller = () => {
                     <ProductItem key={index} id={item._id} name={item.name} image={item.image} price={item.price}/>
                 ))
             }
-
         </div>
-
     </div>
   )
 }

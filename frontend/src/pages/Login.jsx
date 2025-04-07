@@ -36,7 +36,7 @@ const Login = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:8080/backend_war_exploded/User", {
+            const response = await fetch("http://localhost:8080/User", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),

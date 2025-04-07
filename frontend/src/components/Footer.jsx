@@ -11,7 +11,6 @@ const Footer = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam repellat voluptates consectetur fugiat vitae maxime, sapiente consequatur recusandae optio quod expedita laborum, nostrum soluta. Illo consequatur aliquid in fugit natus.
                 </p>
             </div>
-
             <div>
                 <p className='text-xl font-medium mb-5'>COMPANY</p>
                 <ul className='flex flex-col gap-1 text-gray-600'>
@@ -21,21 +20,17 @@ const Footer = () => {
                     <li>Privacy Policy</li>
                 </ul>
             </div>
-
             <div>
                 <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
                 <ul className='flex flex-col gap-1 text-gray-600'>
-                    <li>Phone number</li>
+                    <li>+212 600000000</li>
                     <li>contact@covera.com</li>
-
                 </ul>
             </div>
                 <hr />
                 <p className='py-5 text-sm text-center'>Copyright 2024@ covera.com - All Right Reserved.</p>
             <div>
-
             </div>
-
         </div>
     </div>
   )

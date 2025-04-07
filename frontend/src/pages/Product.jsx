@@ -16,7 +16,7 @@ const Product = () => {
 
   const fetchProductData = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/backend_war_exploded/Product/${productId}`);
+      const response = await fetch(`http://localhost:8080/Product/${productId}`);
       if (!response.ok) {
         throw new Error("Erreur lors de la récupération du produit");
       }

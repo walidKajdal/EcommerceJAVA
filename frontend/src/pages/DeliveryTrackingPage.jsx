@@ -18,7 +18,7 @@ const DeliveryTrackingPage = () => {
     const socketRef = useRef(null);
 
     const connectWebSocket = () => {
-        const ws = new WebSocket(`ws://localhost:8080/backend_war_exploded/ws/order/${orderId}`);
+        const ws = new WebSocket(`ws://localhost:8080/ws/order/${orderId}`);
 
         ws.onopen = () => {
             console.log("WebSocket connected");

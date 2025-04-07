@@ -2,28 +2,34 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="backend:war exploded" />
+      <artifact name="backend:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91a3d24-39ab-4edc-8ecb-45bc518f047e" name="Changes" comment="dakchi jdid">
+    <list default="true" id="f91a3d24-39ab-4edc-8ecb-45bc518f047e" name="Changes" comment="tes">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a8aca414-6d7e-4538-a424-04386c510545.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a8aca414-6d7e-4538-a424-04386c510545.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/controller/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/util/DataImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/util/DataImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/META-INF/context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/BestSeller.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/BestSeller.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LatestCollection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LatestCollection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NewsletterBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NewsletterBox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/DeliveryTrackingPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/DeliveryTrackingPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Orders.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Orders.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Product.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/TrackingPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/TrackingPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +83,10 @@
     &quot;accountId&quot;: &quot;ffb6e3d4-b6c4-4eb3-8e2e-bb51a697e5ae&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -95,42 +105,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.JavaTCPServer.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.TestCloudinary.executor": "Run",
-    "Application.TrackingServer.executor": "Run",
-    "Application.sock.executor": "Run",
-    "HTTP Request.generated-requests | #1.executor": "Run",
-    "JavaScript Debug.index.html.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Smart Tomcat.Tomcat: backend.executor": "Run",
-    "Tomcat Server.Tomcat 10.1.39 (1).executor": "Run",
-    "Tomcat Server.Tomcat 10.1.39.executor": "Run",
-    "git-widget-placeholder": "akram",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/PC/test2/backend/src/main/java",
-    "last_opened_file_path": "C:/Users/PC/test2/.smarttomcat/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Application.JavaTCPServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestCloudinary.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TrackingServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.sock.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.Tomcat: backend.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.39 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.39.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;akram&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/PC/test2/backend/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC/EcommerceJAVA&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ],
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;DockerIgnore&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\PC\test2\backend\src\main\uploads" />
@@ -225,9 +239,9 @@
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="backend:war exploded">
+        <artifact name="backend:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/backend_war_exploded" />
+            <option name="CONTEXT_PATH" value="/backend_war" />
           </settings>
         </artifact>
       </deployment>
@@ -306,7 +320,7 @@
         <option name="Make" enabled="true" />
         <option name="MakeProject" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="backend:war exploded" />
+          <artifact name="backend:war" />
         </option>
       </method>
     </configuration>
@@ -395,6 +409,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.sock" />
       <item itemvalue="Application.TrackingServer" />
@@ -467,6 +485,10 @@
       <workItem from="1743514364473" duration="11053000" />
       <workItem from="1743595607022" duration="28531000" />
       <workItem from="1743654568255" duration="35864000" />
+      <workItem from="1743964257563" duration="2257000" />
+      <workItem from="1743971996712" duration="8914000" />
+      <workItem from="1743982599772" duration="255000" />
+      <workItem from="1743983740103" duration="12605000" />
     </task>
     <task id="LOCAL-00001" summary="tsawr rah static hta nsawb servlet dialhom">
       <option name="closed" value="true" />
@@ -507,6 +529,21 @@
     <option featureType="dependencySupport" implementationName="java:javax.enterprise:cdi-api" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">

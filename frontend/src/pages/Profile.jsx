@@ -15,7 +15,7 @@ const Profile = () => {
             return;
         }
 
-        fetch("http://localhost:8080/backend_war_exploded/User", {
+        fetch("http://localhost:8080/User", {
             method: "GET",
             headers: { "Authorization": `Bearer ${token}` },
         })
